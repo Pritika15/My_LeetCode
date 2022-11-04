@@ -11,12 +11,13 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        // if(list1==NULL && list2!=NULL) return list2;
-        // else if( list1 != NULL && list2 ==NULL) return list1;
-        if (NULL == list1)
-            return list2;
-        if (NULL == list2)
-            return list1;
+        if(list1==NULL && list2!=NULL) return list2;
+        else if( list1 != NULL && list2 ==NULL) return list1;
+        else if(list1==NULL && list2==NULL) return NULL;
+        // if (NULL == list1)
+        //     return list2;
+        // if (NULL == list2)
+        //     return list1;
         ListNode* headNode=NULL;
         if(list1->val < list2->val)
         {
