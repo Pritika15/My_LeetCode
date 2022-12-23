@@ -6,7 +6,7 @@
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input:</strong>
+<pre><span style="font-size:18px"><strong>Input: </strong>V = 5 , adj = [[2,3,1] , [0], [0,4], [0], [2]]
 </span><img alt="" src="https://media.geeksforgeeks.org/img-practice/graph-1659528381.png" style="height:300px; width:300px"><span style="font-size:18px">
 <strong>Output:</strong> 0 2 4 3 1
 <strong>Explanation</strong>: 
@@ -22,7 +22,7 @@ Thus dfs will be 0 1 2 4 3.</span>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input:</strong>
+<pre><span style="font-size:18px"><strong>Input:</strong> V = 4, adj = [[1,3], [2,0], [1], [0]]
 </span><img alt="" src="https://media.geeksforgeeks.org/img-practice/graph(1)-1659528893.png" style="height:300px; width:300px"><span style="font-size:18px">
 <strong>Output:</strong> 0 1 2 3
 <strong>Explanation</strong>:
