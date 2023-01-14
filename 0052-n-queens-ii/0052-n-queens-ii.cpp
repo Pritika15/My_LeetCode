@@ -27,12 +27,12 @@ public:
         }
         return true;
     }
-    void Num(int col, vector<vector<string>>&ans,vector<string>&board,int n,int &count)
+    void Num(int col,vector<string>&board,int n,int &count)
     {
         
         if(col==n)
         {
-            ans.push_back(board);
+            
             count++;
             return;
             
@@ -43,13 +43,13 @@ public:
             if(isSafe(i,col,board,n))
             {
                 board[i][col]='Q';
-                Num(col+1,ans,board,n,count);
+                Num(col+1,board,n,count);
                 board[i][col]='.';
             }
         }
     }
     int totalNQueens(int n) {
-        vector<vector<string>>ans;
+      
         vector<string>board(n);
         string s(n,'.');
         for(int i=0;i<n;i++)
@@ -57,7 +57,7 @@ public:
             board[i]=s;
         }
         int count=0;
-        Num(0,ans,board,n,count);
+        Num(0,board,n,count);
         return count;
     }
 };
