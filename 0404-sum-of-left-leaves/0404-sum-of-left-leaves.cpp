@@ -11,21 +11,36 @@
  */
 class Solution {
 public:
-    int sum=0;
-    int solve(TreeNode* root, bool flag)
-    {
-        
-        if(root==NULL) return sum;
-        solve(root->left,true);
-        solve(root->right,false);
-        if(root->left==NULL && root->right==NULL && flag==true)
-            sum+=root->val;
-        return sum;
-    }
     int sumOfLeftLeaves(TreeNode* root) {
-        bool flag=false;
-         solve(root,flag);
-        return sum;
-        
+        queue<TreeNode*>q;
+        q.push(root);
+        int ans=0;
+        if(root->left==NULL && root->right==NULL)
+            return 0;
+        while(!q.empty())
+        {
+            int size=q.size();
+            for(int i=0;i<size;i++)
+            {
+                TreeNode* temp=q.front();
+                q.pop();
+                if(temp==NULL)
+                    ans+=0;
+                else if(temp!=NULL && i%2==0 && temp->left==NULL && temp->right==NULL)
+                    ans+=temp->val;
+                if(temp!=NULL)
+                {
+                        if(temp->left==NULL)
+                        q.push(NULL);
+                    else q.push(temp->left);
+                    if(temp->right==NULL)
+                        q.push(NULL);
+                   else q.push(temp->right);
+                }
+                
+            }
+           
+        }
+         return ans;
     }
 };
