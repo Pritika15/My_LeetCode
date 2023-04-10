@@ -1,31 +1,23 @@
 class Solution {
 public:
-    void helper(vector<vector<int>>&ans, vector<int>&a,vector<int>nums,vector<int>&vis)
+    void solve(int indx,vector<vector<int>>&ans,vector<int>& nums)
     {
-        if(a.size()==nums.size())
+        if(indx==nums.size())
         {
-            ans.push_back(a);
+            ans.push_back(nums);
             return;
         }
-        for(int i=0;i<nums.size();i++)
+        for(int i=indx;i<nums.size();i++)
         {
-            if(vis[i]==0)
-            {
-                a.push_back(nums[i]);
-                vis[i]=1;
-                helper(ans,a,nums,vis);
-                vis[i]=0;
-                a.pop_back();
-            }
+            swap(nums[indx],nums[i]);
+            solve(indx+1,ans,nums);
+             swap(nums[indx],nums[i]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> ans;
-        int n=nums.size();
-        vector<int>a;
-        vector<int>vis(n,0);
-        helper(ans,a,nums,vis);
+        vector<vector<int>>ans;
         
+        solve(0,ans,nums);
         return ans;
     }
 };
