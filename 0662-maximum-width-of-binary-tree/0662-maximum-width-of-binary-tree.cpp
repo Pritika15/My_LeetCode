@@ -11,9 +11,8 @@
  */
 class Solution {
 public:
-   
     int widthOfBinaryTree(TreeNode* root) {
-        if(!root) return 0;
+         if(!root) return 0;
         queue<pair<TreeNode*,int>>q;
         q.push({root,0});
        
