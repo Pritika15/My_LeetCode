@@ -1,28 +1,52 @@
 class MyHashMap {
 public:
-    vector<int>vec;
-    int size;
+    vector<vector<pair<int,int>>>vec;
+    int size=1000;
     MyHashMap() {
-    size=1000002;
-    vec.resize(size);
-    for(int i=0;i<size;i++)
-        vec[i]= -1;
+     vec.resize(size);   
     }
-    
+    int hash(int key)
+    {
+        return key%size;
+    }
     void put(int key, int value) {
-        vec[key]=value;
-        
+        int index=hash(key);
+        vector<pair<int,int>> &row=vec[index];
+        for(auto itr=row.begin();itr!=row.end();itr++)
+        {
+            if(itr->first==key)
+            {
+                itr->second=value;
+                return;
+            }
+        }
+        row.push_back(make_pair(key,value));
     }
     
     int get(int key) {
-        if(vec[key]!= -1)
-            return vec[key];
-        else
-            return -1;
+        int index=hash(key);
+        vector<pair<int,int>> &row=vec[index];
+        for(auto itr=row.begin();itr!=row.end();itr++)
+        {
+            if(itr->first==key)
+            {
+                return itr->second;
+            }
+        }
+        return -1;
     }
     
     void remove(int key) {
-     vec[key]= -1;   
+        int index=hash(key);
+        vector<pair<int,int>> &row=vec[index];
+        for(auto itr=row.begin();itr!=row.end();itr++)
+        {
+            if(itr->first==key)
+            {
+                row.erase(itr);
+                return;
+            }
+        }
     }
 };
 
