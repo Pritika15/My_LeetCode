@@ -6,33 +6,46 @@ using namespace std;
 class Solution
 {
 public:
-    void solve(int index,vector<int> arr, int N,vector<int>&ans,vector<int>&v)
+     void solve(vector<int> &num,vector<vector<int>>&subSeq)
     {
-        if(index==N)
+      int n=num.size();
+      for(int i=0;i<(1<<n);i++)
+      {
+        vector<int>temp;
+        for(int j=0;j<n;j++)
         {
-            int sum=0;
-            for(int i=0;i<v.size();i++)
-            {
-                sum+=v[i];
-            }
-            ans.push_back(sum);
-            return;
-            
+          if(i & (1<<j))
+          {
+            temp.push_back(num[j]);
+          }
         }
-        v.push_back(arr[index]);
-        solve(index+1,arr,N,ans,v);
-        v.pop_back();
-        solve(index+1,arr,N,ans,v);
+        if (temp.size() > 0) {
+          subSeq.push_back(temp);
+          temp.clear();
+        }
+      }
     }
-
     vector<int> subsetSums(vector<int> arr, int N)
     {
         // Write Your Code here
-        vector<int>ans;
-        vector<int>v;
-        solve(0,arr,N,ans,v);
-        return ans;
-    }
+      vector<vector<int>>subSeq;
+      solve(arr,subSeq);
+      vector<int>ans;
+      ans.push_back(0);
+      for(int i=0;i<subSeq.size();i++)
+      {
+        int t=0;
+        for(int j=0;j<subSeq[i].size();j++)
+        {
+          t+=subSeq[i][j];
+        }
+        ans.push_back(t);
+      }
+      
+      return ans;
+        }
+   
+
 };
 
 //{ Driver Code Starts.
