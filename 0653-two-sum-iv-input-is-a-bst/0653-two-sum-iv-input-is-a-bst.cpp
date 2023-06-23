@@ -9,28 +9,68 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+class BSTiterator{
+    public:
+    stack<TreeNode*>s;
+    bool flag=true; // flag==true->next else before
+    void AddVal(TreeNode* root,stack<TreeNode*>&s)
+    {
+        TreeNode* curr=root;
+        while(curr!=NULL)
+        {
+            s.push(curr);
+            if(flag)
+            {
+                curr=curr->left;
+            }
+            else
+            {
+                curr=curr->right;
+            }
+        }
+    }
+    BSTiterator(TreeNode* root,bool flagVal){
+        flag=flagVal;
+        AddVal(root,s);
+    }
+    int next()
+    {
+        int ans;
+        if(!s.empty())
+        {
+            TreeNode* temp=s.top();
+            s.pop();
+            ans=temp->val;
+            if(flag)
+            {
+                if(temp->right) AddVal(temp->right,s);
+            }
+            else
+            {
+                if(temp->left) AddVal(temp->left,s);
+            }
+        }
+        return ans;
+    
+    }
+    
+
+    
+};
 class Solution {
 public:
-    void dfs(TreeNode* root,vector<int>&v)
-    {
-        if(root==NULL) return;
-        v.push_back(root->val);
-        if(root->left!=NULL)
-            dfs(root->left,v);
-        if(root->right!=NULL)
-            dfs(root->right,v);
-    }
     bool findTarget(TreeNode* root, int k) {
-        vector<int>v;
-        dfs(root,v);
-        unordered_map<int,int>m;
-        for(int i=0;i<v.size();i++)
+        if(!root) return false;
+        BSTiterator l(root,true);
+        BSTiterator r(root,false);
+        
+        int i=l.next();
+        int j=r.next();
+        while(i<j)
         {
-            if(m.find(k-v[i])!=m.end())
-            {
-                return true;
-            }
-            m[v[i]]++;
+            if(i+j==k) return true;
+            else if(i+j<k) i=l.next();
+            else j=r.next();
         }
         return false;
     }
