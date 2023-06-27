@@ -8,21 +8,33 @@
  */
 class Solution {
 public:
-    ListNode *detectCycle(ListNode *head) {
-        unordered_map<ListNode *,int>m;
-        ListNode *temp=head;
-        while(temp!=NULL)
+    bool hasAcycle(ListNode *head, ListNode *&ans)
+    {
+        ListNode * curr=head;
+        ListNode * slow=head;
+        ListNode * fast=head;
+        while(fast!=NULL && fast->next!=NULL)
         {
-            if(m.find(temp)!=m.end())
+            slow=slow->next;
+            fast=fast->next->next;
+            
+            if(slow==fast)
             {
-                return temp;
+                while(curr!=slow)
+                {
+                    curr=curr->next;
+                    slow=slow->next;
+                }
+                ans=curr;
+                return true;
             }
-            else
-            {
-                m.insert({temp,1});
-            }
-            temp=temp->next;
         }
-        return NULL;
+        return false;
+    }
+    ListNode *detectCycle(ListNode *head) {
+       if(!head || !head->next) return NULL;
+        ListNode * ans;
+        if(hasAcycle(head,ans)) return ans;
+        else return NULL;
     }
 };
