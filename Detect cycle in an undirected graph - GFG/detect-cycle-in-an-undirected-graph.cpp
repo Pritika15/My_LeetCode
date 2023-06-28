@@ -6,32 +6,38 @@ using namespace std;
 class Solution {
   public:
     // Function to detect cycle in an undirected graph.
-    bool dfs(int node,int parent,vector<int> adj[],vector<int>&vis)
-    {
-        vis[node]=1;
-        for(auto adjNodes:adj[node])
-        {
-            if(!vis[adjNodes])
-            {
-                if(dfs(adjNodes,node,adj,vis)==true) 
-                return true;
-            }
-            else if(adjNodes!=parent) return true;
-        }
-        return false;
-    }
-    
     bool isCycle(int V, vector<int> adj[]) {
         // Code here
         vector<int>vis(V,0);
-       for(int i=0;i<V;i++)
-       {
-           if(!vis[i])
-           {
-               if(dfs(i,-1,adj,vis)==true) return true;
-           }
-       }
-       return false;
+        queue<pair<int,int>>q;
+        for(int i=0;i<V;i++)
+        {
+            if(!vis[i])
+            {
+                q.push({i,-1});
+                vis[i]=1;
+                while(!q.empty())
+                {
+                    int NodeVal=q.front().first;
+                    int parent= q.front().second;
+                    q.pop();
+                    
+                    for(auto itr:adj[NodeVal])
+                    {
+                        if(itr!=parent && vis[itr])
+                        {
+                            return true;
+                        }
+                        if(!vis[itr])
+                        {
+                            q.push({itr,NodeVal});
+                            vis[itr]=1;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 };
 
