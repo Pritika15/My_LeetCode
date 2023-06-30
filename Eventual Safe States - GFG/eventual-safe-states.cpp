@@ -10,38 +10,50 @@ using namespace std;
 
 class Solution {
   public:
+  bool dfs(int indx,vector<int>adj[],vector<int>&vis,vector<int>&PathVis,vector<int>&check)
+  {
+      vis[indx]=1;
+      PathVis[indx]=1;
+      
+      for(auto itr:adj[indx])
+      {
+          if(!vis[itr])
+          {
+              if(dfs(itr,adj,vis,PathVis,check)==true)
+              {
+                  check[itr]=0;
+                  return true;
+              }
+          }
+          else if(PathVis[itr])
+          {
+              check[itr]=0;
+              return true;
+          }
+      }
+      check[indx]=1;
+      PathVis[indx]=0;
+      return false;
+  }
     vector<int> eventualSafeNodes(int V, vector<int> adj[]) {
         // code here
         vector<int>ans;
-        vector<int>ReverseAdj[V];
-        vector<int>inDegree(V,0);
+        vector<int>vis(V,0);
+        vector<int>PathVis(V,0);
+        vector<int>check(V,0);
         for(int i=0;i<V;i++)
         {
-            for(auto it: adj[i])
+            if(!vis[i])
             {
-                ReverseAdj[it].push_back(i);
-                inDegree[i]++;
+                dfs(i,adj,vis,PathVis,check);
             }
         }
-        queue<int>q;
-        for(int i=0;i<V;i++)
+        for(int i=0;i<check.size();i++)
         {
-            if(inDegree[i]==0)
+            if(check[i]==1)
             {
-                q.push(i);
+                ans.push_back(i);
             }
-        }
-        while(!q.empty())
-        {
-            int node=q.front();
-            q.pop();
-            ans.push_back(node);
-            for(auto x:ReverseAdj[node])
-            {
-                inDegree[x]--;
-                if(inDegree[x]==0) q.push(x);
-            }
-            
         }
         sort(ans.begin(),ans.end());
         return ans;
