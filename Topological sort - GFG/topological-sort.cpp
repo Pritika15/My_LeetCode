@@ -10,36 +10,35 @@ class Solution
 	vector<int> topoSort(int V, vector<int> adj[]) 
 	{
 	    // code here
-	    vector<int>ans;
+	   // BFS
+	    vector<int> ans;
 	    queue<int>q;
-	    vector<int>Indegree(V);
-	    for(int i=0;i<V;i++)
-	    {
-	        for(auto index:adj[i])
-	        {
-	            Indegree[index]++;
-	        }
-	    }
-	    for(int i=0;i<V;i++)
-	    {
-	        if(Indegree[i]==0)
-	        q.push(i);
-	    }
-	    while(!q.empty())
-	    {
-	        int x=q.front();
-	        q.pop();
-	        ans.push_back(x);
-	        
-	        for(auto it:adj[x])
-	        {
-	            Indegree[it]--;
-	            if(Indegree[it]==0) q.push(it);
-	        }
-	        
-	        
-	    }
-	    return ans;
+	   vector<int>topo(V,0);
+	   for(int i=0;i<V;i++)
+	   {
+	       for(auto itr:adj[i])
+	       {
+	           topo[itr]++;
+	       }
+	   }
+	 for(int i=0;i<V;i++)
+	 {
+	     if(topo[i]==0) q.push(i);
+	 }
+	 
+	 while(!q.empty())
+	 {
+	     int x=q.front();
+	     q.pop();
+	     ans.push_back(x);
+	     for(auto it:adj[x])
+	     {
+	         topo[it]--;
+	         if(topo[it]==0) q.push(it);
+	     }
+	 }
+	  return ans;
+	    
 	}
 };
 
