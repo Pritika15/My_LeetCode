@@ -8,34 +8,37 @@ class Solution {
     // Function to detect cycle in a directed graph.
     bool isCyclic(int V, vector<int> adj[]) {
         // code here
-        vector<int>Indegree(V);
+        // Topological Sort--->To check cycle
+        queue<int>q;
+        vector<int>Indegree(V,0);
+       
         for(int i=0;i<V;i++)
         {
-            for(auto it:adj[i])
+            for(auto itr:adj[i])
             {
-                Indegree[it]++;
+                Indegree[itr]++;
             }
         }
-        queue<int>q;
-        for(int i=0;i<V;i++)
+        
+        for(int i=0;i<Indegree.size();i++)
         {
             if(Indegree[i]==0) q.push(i);
         }
-        vector<int>ans;
+        
+        int cnt=0;
         while(!q.empty())
         {
             int x=q.front();
             q.pop();
-            ans.push_back(x);
-            
-            for(auto i:adj[x])
+            cnt++;
+            for(auto itr:adj[x])
             {
-                Indegree[i]--;
-                if(Indegree[i]==0) q.push(i);
+                Indegree[itr]--;
+                if(Indegree[itr]==0) q.push(itr);
             }
         }
-        if(ans.size()==V) return false;
-         return true;
+        if(cnt==V) return false;
+        return true;
     }
 };
 
