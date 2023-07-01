@@ -9,55 +9,81 @@ using namespace std;
 
 class Solution{
     public:
+   vector<int>topoSort(int K,vector<int>AdjList[])
+   {
+       vector<int>Indegree(K,0);
+        for(int i=0;i<K;i++)
+        {
+            for(auto itr:AdjList[i])
+            {
+                Indegree[itr]++;
+            }
+        }
+        queue<int>q;
+        for(int i=0;i<Indegree.size();i++)
+        {
+            if(Indegree[i]==0)
+            {
+                q.push(i);
+            }
+        }
+        vector<int>ans;
+         while(!q.empty())
+        {
+            int node=q.front();
+            q.pop();
+            ans.push_back(node);
+            
+            for(auto itr:AdjList[node])
+            {
+                Indegree[itr]--;
+                if(Indegree[itr]==0) q.push(itr);
+            }
+        }
+        return ans;
+   }
     string findOrder(string dict[], int N, int K) {
         //code here
+        // vector<char> letters;
+        // int cnt=0;
+        // for (char ch = 'a'; ch <= 'z' && cnt<K; ch++) {
+        //     letters.push_back(ch);
+        //     cnt++;
+        // }
+        // for(auto it:letters)
+        // {
+        //     cout<<it<<" ";
+        // }
         vector<int>AdjList[K];
-        string ans;
         for(int i=0;i<N-1;i++)
         {
             string s1=dict[i];
             string s2=dict[i+1];
             int len=min(s1.length(),s2.length());
-            for(int j=0;j<len;j++)
+           
+            for(int k=0;k<len;k++)
             {
-                if(s1[j]!=s2[j])
+                if(s1[k]!=s2[k])
                 {
-                    AdjList[s1[j]-'a'].push_back(s2[j]-'a');
-                    break;
+                   AdjList[s1[k]-'a'].push_back(s2[k]-'a');
+                   break;
                 }
             }
+            
+           
+            
         }
-        vector<int>ReverseAdj[K];
-        vector<int>Indegree(K,0);
-        for(int i=0;i<K;i++)
+        
+        //Topo sort
+        
+        vector<int>ans=topoSort(K,AdjList);
+       
+        string a="";
+        for(auto it:ans)
         {
-            for(auto ptr:AdjList[i])
-            {
-                ReverseAdj[ptr].push_back(i);
-                Indegree[i]++;
-            }
+            a=a+char(it+'a');
         }
-        queue<int>q;
-        for(int i=0;i<K;i++)
-        {
-            if(Indegree[i]==0)
-            q.push(i);
-        }
-        while(!q.empty())
-        {
-            int x=q.front();
-            q.pop();
-            ans.push_back(x+'a');
-            for(auto m:ReverseAdj[x])
-            {
-                Indegree[m]--;
-                if(Indegree[m]==0) q.push(m);
-            }
-        }
-        // for(auto x:ans)
-        // cout<<x;
-        reverse(ans.begin(),ans.end());
-        return ans;
+        return a;
     }
 };
 
