@@ -5,45 +5,67 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
-
-class Solution {
-  public:
-  void solve(int indx,vector<int>adjList[],vector<int>&vis)
-  {
-      vis[indx]=1;
-      for(auto itr:adjList[indx])
-      {
-          if(!vis[itr]) solve(itr,adjList,vis);
-      }
-  }
-    int numProvinces(vector<vector<int>> adj, int V) {
-        // code here
-        vector<int>adjList[V];
-        for(int i=0;i<adj.size();i++)
+class DisJoint{
+    public:
+    vector<int>parent,size;
+    
+    DisJoint(int n)
+    {
+        parent.resize(n);
+        for(int i=0;i<n;i++) parent[i]=i;
+        
+        size.resize(n,0);
+        
+    }
+    
+    int FindParent(int node)
+    {
+        if(node==parent[node]) return node;
+        
+        return parent[node]=FindParent(parent[node]);
+    }
+    
+    void UnionBysize(int u, int v)
+    {
+        int ulp_u=FindParent(u);
+        int ulp_v=FindParent(v);
+        if(ulp_u==ulp_v) return;
+        
+        if(size[ulp_u]<size[ulp_v]) 
         {
-            for(int j=0;j<adj[i].size();j++)
-            {
-                if(adj[i][j]==1 && i!=j)
-                {
-                    adjList[i].push_back(j);
-                    adjList[j].push_back(i);
-                }
-                
-                
-            }
+            parent[ulp_u]=ulp_v;
+            size[ulp_v]+=size[ulp_u];
+        }
+        else
+        {
+            parent[ulp_v]=ulp_u;
+            size[ulp_u]+=size[ulp_v];
         }
         
-        vector<int>vis(V,0);
-        int ans=0;
-        for(int i=0;i<V;i++)
+    }
+};
+class Solution {
+  public:
+    int numProvinces(vector<vector<int>> adj, int V) {
+        // code here
+        DisJoint DS(V);
+        
+        for(int i=0;i<adj.size();i++)
         {
-            if(!vis[i])
+            for(int j=0;j<adj[0].size();j++)
             {
-                ans++;
-                solve(i,adjList,vis);
+                if(adj[i][j]==1)
+                {
+                    DS.UnionBysize(i,j);
+                }
             }
         }
-        return ans;
+        int cnt=0;
+        for(int i=0;i<V;i++)
+        {
+            if(DS.parent[i]==i) cnt++;
+        }
+        return cnt;
     }
 };
 
