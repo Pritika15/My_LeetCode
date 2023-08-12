@@ -10,53 +10,37 @@ using namespace std;
 
 class Solution {
   public:
-  bool dfs(int indx,vector<int>adj[],vector<int>&vis,vector<int>&PathVis,vector<int>&check)
+  bool dfs(int node,vector<int>&vis,vector<int>&pathVis,vector<int>&check,vector<int> adj[])
   {
-      vis[indx]=1;
-      PathVis[indx]=1;
+      vis[node]=1;
+      pathVis[node]=1;
       
-      for(auto itr:adj[indx])
+      for(auto it:adj[node])
       {
-          if(!vis[itr])
+          if(!vis[it])
           {
-              if(dfs(itr,adj,vis,PathVis,check)==true)
-              {
-                  check[itr]=0;
-                  return true;
-              }
+              if(dfs(it,vis,pathVis,check,adj)==true) return true;
           }
-          else if(PathVis[itr])
-          {
-              check[itr]=0;
-              return true;
-          }
+          else if(vis[it] && pathVis[it]) return true;
       }
-      check[indx]=1;
-      PathVis[indx]=0;
+      pathVis[node]=0;
+      check.push_back(node);
       return false;
   }
     vector<int> eventualSafeNodes(int V, vector<int> adj[]) {
         // code here
-        vector<int>ans;
-        vector<int>vis(V,0);
-        vector<int>PathVis(V,0);
-        vector<int>check(V,0);
+        vector<int>check;
+        vector<int>vis(V,0),pathVis(V,0);
         for(int i=0;i<V;i++)
         {
             if(!vis[i])
             {
-                dfs(i,adj,vis,PathVis,check);
+                dfs(i,vis,pathVis,check,adj);
             }
+            
         }
-        for(int i=0;i<check.size();i++)
-        {
-            if(check[i]==1)
-            {
-                ans.push_back(i);
-            }
-        }
-        sort(ans.begin(),ans.end());
-        return ans;
+        sort(check.begin(),check.end());
+        return check;
     }
 };
 
