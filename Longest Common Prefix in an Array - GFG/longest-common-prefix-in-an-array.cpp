@@ -14,20 +14,36 @@ class Solution{
     {
         // your code here
         if(N==1) return arr[0];
-        sort(arr,arr+N);
+        string temp;
         string s1=arr[0];
-        string s2=arr[N-1];
-        int len=min(s1.length(),s2.length());
-        string ans;
-        for(int i=0;i<len;i++)
+        string s2=arr[1];
+        int l=min(s1.length(),s2.length());
+        for(int i=0;i<l;i++)
         {
-            if(s1[i]==s2[i]) ans+=s1[i];
+            if(s1[i]==s2[i]) temp+=s1[i];
             else break;
+        }
+        
+        for(int i=2;i<N;i++)
+        {
+            string tt=arr[i];
+            int len=min(tt.length(),temp.length());
+            string ttt;
+            
+            for(int j=0;j<len;j++)
+            {
+                if(tt[j]==temp[j]) ttt+=tt[j];
+                // if(j==len-1) temp=ttt;
+                if(tt[j]!=tt[j] || j==len-1) 
+                {
+                    temp=ttt;
+                    break;
+                }
+            }
             
         }
-        if(ans.length()==0) return "-1";
-        return ans;
-        
+        if(temp.length()==0) return "-1";
+        return temp;
     }
 };
 
