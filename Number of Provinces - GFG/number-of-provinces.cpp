@@ -5,65 +5,69 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
-class DisJoint{
+class DisjointSet
+{
     public:
     vector<int>parent,size;
-    
-    DisJoint(int n)
+    DisjointSet(int n)
     {
-        parent.resize(n);
-        for(int i=0;i<n;i++) parent[i]=i;
-        
-        size.resize(n,0);
-        
+        size.resize(n+1,1);
+        parent.resize(n+1);
+        for(int i=0;i<=n;i++) parent[i]=i;
     }
     
-    int FindParent(int node)
+    int findParent(int node)
     {
         if(node==parent[node]) return node;
-        
-        return parent[node]=FindParent(parent[node]);
+        return parent[node]=findParent(parent[node]);
     }
     
-    void UnionBysize(int u, int v)
+    void UnionBySize(int u, int v)
     {
-        int ulp_u=FindParent(u);
-        int ulp_v=FindParent(v);
+        int ulp_u=findParent(u);
+        int ulp_v=findParent(v);
         if(ulp_u==ulp_v) return;
-        
-        if(size[ulp_u]<size[ulp_v]) 
-        {
-            parent[ulp_u]=ulp_v;
-            size[ulp_v]+=size[ulp_u];
-        }
-        else
+        if(size[ulp_u]>size[ulp_v])
         {
             parent[ulp_v]=ulp_u;
             size[ulp_u]+=size[ulp_v];
         }
-        
+        else
+        {
+            parent[ulp_u]=ulp_v;
+            size[ulp_v]+=size[ulp_u];
+        }
     }
+    
 };
 class Solution {
   public:
     int numProvinces(vector<vector<int>> adj, int V) {
         // code here
-        DisJoint DS(V);
-        
+        vector<vector<int>>graph;
         for(int i=0;i<adj.size();i++)
         {
-            for(int j=0;j<adj[0].size();j++)
+            for(int j=0;j<adj[i].size();j++)
             {
                 if(adj[i][j]==1)
                 {
-                    DS.UnionBysize(i,j);
+                    graph.push_back({i,j});
                 }
+            }
+        }
+        DisjointSet ds(V);
+        for(int i=0;i<graph.size();i++)
+        {
+            if(ds.findParent(graph[i][0])!=ds.findParent(graph[i][1]))
+            {
+                ds.UnionBySize(graph[i][0],graph[i][1]);
             }
         }
         int cnt=0;
         for(int i=0;i<V;i++)
         {
-            if(DS.parent[i]==i) cnt++;
+            if(i==ds.parent[i]) cnt++;
+            
         }
         return cnt;
     }
