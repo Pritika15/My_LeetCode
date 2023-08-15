@@ -9,43 +9,34 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
 class Solution {
 public:
-    void indexing(TreeNode* root, int i, int j, vector<pair<int,pair<int,int>>>&v)
-    {
-        v.push_back({i,{j,root->val}});
-        if(root->left)
-            indexing(root->left,i-1,j+1,v);
-        if(root->right)
-            indexing(root->right,i+1,j+1,v);
-    }
     vector<vector<int>> verticalTraversal(TreeNode* root) {
         vector<vector<int>>ans;
-        vector<pair<int,pair<int,int>>>v; //first: index value, second: node value
-        indexing(root,0,0,v);
-        sort(v.begin(),v.end());
-        // for(int i=0;i<v.size();i++)
-        // {
-        //     cout<<v[i].first<<" "<<v[i].second.first<<" "<<v[i].second.second<<endl;
-        // }
-        int temp;
-        for(int i=0;i<v.size();i++)
-        {
-            temp=v[i].first;
-            vector<int>vv;
-            vv.push_back(v[i].second.second);
-            for(int j=i+1;j<v.size();j++)
-            {
-                if(temp==v[j].first)
-                { vv.push_back(v[j].second.second);
-                }
-                else break;
-                i=j;
-            }
-            ans.push_back(vv);
-        }
-        
-        return ans;
+         queue<pair<TreeNode*,pair<int,int>>>q;
+         map<int,map<int,multiset<int>>>m;
+         q.push({root,{0,0}});
+         while(!q.empty())
+         {
+            TreeNode*n=q.front().first;
+             int verti=q.front().second.first;
+             int level=q.front().second.second;
+             q.pop();
+             m[verti][level].insert({n->val});
+             if(n->left) q.push({n->left,{verti-1,level+1}});
+             if(n->right) q.push({n->right,{verti+1,level+1}});
+         }
+         
+         for(auto v:m)
+         {
+             vector<int>temp;
+             for(auto vv:v.second)
+             {
+                temp.insert(temp.end(),vv.second.begin(),vv.second.end());
+             }
+             ans.push_back(temp);
+             
+         }
+         return ans;
     }
 };
