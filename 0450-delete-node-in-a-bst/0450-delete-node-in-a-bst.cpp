@@ -11,18 +11,18 @@
  */
 class Solution {
 public:
-    TreeNode* left(TreeNode* root)
+    TreeNode* rightt(TreeNode* root)
     {
         if(root->right==NULL) return root;
-        return left(root->right);
+        return rightt(root->right);
     }
     TreeNode* helper(TreeNode* root)
     {
         if(!root->left) return root->right;
         if(!root->right) return root->left;
         TreeNode* rightChild=root->right;
-        TreeNode* leftMost=left(root->left);
-        leftMost->right=rightChild;
+        TreeNode* righttMost=rightt(root->left);
+        righttMost->right=rightChild;
         return root->left;
         
     }
