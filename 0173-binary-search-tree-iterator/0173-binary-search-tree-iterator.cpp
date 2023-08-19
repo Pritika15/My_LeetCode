@@ -11,36 +11,39 @@
  */
 class BSTIterator {
 public:
-    stack<TreeNode* >s;
-    void AddLeft(TreeNode* root, stack<TreeNode* >&s)
+    void PushAll(TreeNode* root, stack<TreeNode*>&s)
     {
-        TreeNode*curr=root;
-        while(curr!=NULL)
+        // if(root) s.push(root);
+         TreeNode* curr=root;
+        while(curr)
         {
             s.push(curr);
             curr=curr->left;
         }
+            
+            
     }
+    stack<TreeNode*>s;
     BSTIterator(TreeNode* root) {
-        AddLeft(root,s);
+        PushAll(root,s);
     }
     
     int next() {
-        int ans;
-        if(!s.empty())
-        {
-            TreeNode* t=s.top();
-            s.pop();
-            if(t->right) AddLeft(t->right,s);
-            ans=t->val;
-        }
+        int ans=s.top()->val;
         
+        TreeNode* rightSubTree=s.top()->right;
+        s.pop();  
+        PushAll(rightSubTree,s);
+
+            
+          
         return ans;
+            
     }
     
     bool hasNext() {
         if(!s.empty()) return true;
-        else return false;
+        return false;
     }
 };
 
