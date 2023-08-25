@@ -1,18 +1,19 @@
 class Solution {
 public:
-    int solve(int index, int time,vector<int>& satisfaction,vector<vector<int>>&dp)
+    int solve(int indx,vector<int>& satisfaction,int t,vector<vector<int>>&dp)
     {
-        if(index>=satisfaction.size()) 
-            return 0;
-        if(dp[index][time]!= -1) return dp[index][time];
-        int include=satisfaction[index]*(time+1)+solve(index+1,time+1,satisfaction,dp);
-        int exclude=0+solve(index+1,time,satisfaction,dp);
-        return dp[index][time]=max(include,exclude);
+        if(indx>=satisfaction.size()) return 0;
+        if(dp[indx][t]!= -1) return dp[indx][t];
+        int NotPick=solve(indx+1,satisfaction,t,dp);
+        int Pick=satisfaction[indx]*t+solve(indx+1,satisfaction,t+1,dp);
+        
+        return dp[indx][t]=max(NotPick,Pick);
     }
     int maxSatisfaction(vector<int>& satisfaction) {
-        sort(satisfaction.begin(),satisfaction.end());
         int n=satisfaction.size();
-        vector<vector<int>>dp(n+1,vector<int>(n+1, -1));
-        return solve(0,0,satisfaction,dp);
+        vector<vector<int>>dp(n,vector<int>(n+1,-1));
+        sort(satisfaction.begin(),satisfaction.end());
+        
+        return solve(0,satisfaction,1,dp);
     }
 };
