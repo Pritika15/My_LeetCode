@@ -5,17 +5,13 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-  void solve(int index,vector<int>&ans,vector<int>&vis,vector<int> adj[])
+  void dfs(int curr,vector<int>&ans,vector<int> adj[],vector<int>&vis)
   {
-      vis[index]=1;
-      ans.push_back(index);
-      for(auto itr:adj[index])
+      vis[curr]=1;
+      ans.push_back(curr);
+      for(auto itr:adj[curr])
       {
-         if(vis[itr]==0)
-         {
-              solve(itr,ans,vis,adj);
-         }
-         
+          if(!vis[itr]) dfs(itr,ans,adj,vis);
       }
   }
     // Function to return a list containing the DFS traversal of the graph.
@@ -23,7 +19,10 @@ class Solution {
         // Code here
         vector<int>ans;
         vector<int>vis(V,0);
-        solve(0,ans,vis,adj);
+        for(int i=0;i<V;i++)
+        {
+            if(!vis[i])dfs(i,ans,adj,vis);
+        }
         return ans;
     }
 };
