@@ -12,74 +12,66 @@ public:
     vector<vector<char>> fill(int n, int m, vector<vector<char>> mat)
     {
         // code here
-        vector<vector<char>>ans(n,vector<char>(m,'X'));
-        vector<vector<int>>vis(n,vector<int>(m,0));
-        
+        vector<vector<char>>ans(mat.size(),vector<char>(mat[0].size(),'X'));
+        vector<vector<int>>vis(mat.size(),vector<int>(mat[0].size(),0));
         queue<pair<int,int>>q;
-        //First row
-        for(int j=0;j<m;j++)
-        {
-            if(mat[0][j]=='O')
-            {
-                q.push({0,j});
-                vis[0][j]=1;
-            }
-        }
-        //Last row
-        for(int j=0;j<m;j++)
-        {
-            if(mat[n-1][j]=='O')
-            {
-                q.push({n-1,j});
-                vis[n-1][j]=1;
-            }
-        }
-        //First col
+        // int n=mat.size();
+        // int m=mat[0].size()-1;
         for(int i=0;i<n;i++)
         {
-            if(mat[i][0]=='O')
+            if(mat[i][0]=='O' && !vis[i][0])
             {
                 q.push({i,0});
                 vis[i][0]=1;
             }
         }
-        //Last col
-        
         for(int i=0;i<n;i++)
         {
-            if(mat[i][m-1]=='O')
+            if(mat[i][m-1]=='O' && !vis[i][m-1])
             {
                 q.push({i,m-1});
                 vis[i][m-1]=1;
             }
         }
-        
+        for(int j=0;j<m;j++)
+        {
+            if(mat[0][j]=='O' && !vis[0][j])
+            {
+                q.push({0,j});
+                vis[0][j]=1;
+            }
+        }
+        for(int j=0;j<m;j++)
+        {
+            if(mat[n-1][j]=='O' && !vis[n-1][j])
+            {
+                q.push({n-1,j});
+                vis[n-1][j]=1;
+            }
+        }
         while(!q.empty())
         {
             int r=q.front().first;
             int c=q.front().second;
             q.pop();
             ans[r][c]='O';
-            
             for(int i= -1;i<=1;i++)
             {
-                for(int j= -1;j<=1; j++)
+                for(int j=-1;j<=1;j++)
                 {
                     if(abs(i)!=abs(j))
                     {
-                        int Newr=r+i;
-                        int Newc=c+j;
+                        int newr=r+i;
+                        int newc=c+j;
                         
-                        if(Newr>=0 && Newr<n && Newc>=0 && Newc<m && !vis[Newr][Newc] && mat[Newr][Newc]=='O')
+                        if(newr>=0 && newc>=0 && newr<n && newc<m+1 && !vis[newr][newc] && mat[newr][newc]=='O')
                         {
-                            q.push({Newr,Newc});
-                            vis[Newr][Newc]=1;
+                            vis[newr][newc]=1;
+                            q.push({newr,newc});
                         }
                     }
-                    
                 }
             }
-            
         }
         return ans;
         
