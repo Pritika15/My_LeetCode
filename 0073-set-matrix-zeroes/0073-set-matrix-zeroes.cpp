@@ -1,32 +1,56 @@
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
-        int col0=1;
-        int m=matrix.size();
-        int n=matrix[0].size();
-        for(int i=0;i<m;i++)
+        // pair<int,int>LocZero;
+        vector<pair<int,int>>v;
+        for(int i=0;i<matrix.size();i++)
         {
-            if(matrix[i][0]==0) col0=0;
-            for(int j=1;j<n;j++)
+            for(int j=0;j<matrix[0].size();j++)
             {
                 if(matrix[i][j]==0)
                 {
-                    matrix[i][0]=0;
-                    matrix[0][j]=0;
+                    v.push_back({i,j});
+                    cout<<i<<" "<<j<<endl;
                 }
             }
         }
         
-        for(int i=m-1;i>=0;i--)
+        for(int i=0;i<v.size();i++)
         {
-            for(int j=n-1;j>=1;j--)
+            int r=v[i].first;
+            int c=v[i].second;
+            
+            int rvar=r;
+            while(rvar!= -1)
             {
-                if(matrix[i][0]==0|| matrix[0][j]==0)
-                    matrix[i][j]=0;
-                
+                matrix[rvar][c]=0;
+                rvar--;
             }
-            if(col0==0)
-                matrix[i][0]=0;
+            
+            rvar=r;
+            while(rvar<matrix.size())
+            {
+               matrix[rvar][c]=0;
+                rvar++;
+            }
+            
+            int cvar=c;
+            while(cvar!= -1)
+            {
+                matrix[r][cvar]=0;
+                cvar--;
+            }
+            
+            cvar=c;
+            while(cvar<matrix[0].size())
+            {
+               matrix[r][cvar]=0;
+                cvar++;
+            }
+            
+            
+            
+            
         }
     }
 };
