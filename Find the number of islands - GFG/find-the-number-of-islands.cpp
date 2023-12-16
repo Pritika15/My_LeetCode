@@ -6,54 +6,40 @@ using namespace std;
 class Solution {
   public:
     // Function to find the number of islands.
-    void bfs(int i,int j,vector<vector<char>>& grid,vector<vector<char>>&vis)
+    void dfs(int r, int c,vector<vector<char>>& grid,vector<vector<int>>&vis)
     {
-        vis[i][j]=1;
-        int n=grid.size();
-        int m=grid[0].size();
-        queue<pair<int,int>>q;
-        q.push({i,j});
-        while(!q.empty())
+        vis[r][c]=1;
+        
+        for(int i= -1;i<=1;i++)
         {
-            int row=q.front().first;
-            int col=q.front().second;
-            q.pop();
-            
-            for(int delRow=-1;delRow<=1;delRow++)
+            for(int j= -1;j<=1;j++)
             {
-                for(int delCol=-1;delCol<=1;delCol++)
+                int newr=r+i;
+                int newc=c+j;
+                
+                if(newr>=0 && newc>=0 && newr<grid.size() && newc<grid[0].size() && grid[newr][newc]=='1' && !vis[newr][newc])
                 {
-                    int newR=row+delRow;
-                    int newC=col+delCol;
-                    
-                    if(newR>=0 && newR<n && newC>=0 && newC<m && grid[newR][newC]=='1' && !vis[newR][newC])
-                    {
-                        vis[newR][newC]=1;
-                        q.push({newR,newC});
-                    }
+                    dfs(newr,newc,grid,vis);
                 }
             }
         }
-        return;
     }
     int numIslands(vector<vector<char>>& grid) {
         // Code here
-        int r=grid.size();
-        int c=grid[0].size();
-        int count=0;
-        vector<vector<char>>vis(r,vector<char>(c,0));
-        for(int i=0;i<r;i++)
+        vector<vector<int>>vis(grid.size(),vector<int>(grid[0].size(),0));
+        int cnt=0;
+        for(int i=0;i<grid.size();i++)
         {
-            for(int j=0;j<c;j++)
+            for(int j=0;j<grid[0].size();j++)
             {
-                if(grid[i][j]=='1'&& !vis[i][j])
+                if(!vis[i][j] && grid[i][j]=='1')
                 {
-                    count++;
-                    bfs(i,j,grid,vis);
+                    dfs(i,j,grid,vis);
+                    cnt++;
                 }
             }
         }
-        return count;
+        return cnt;
     }
 };
 
