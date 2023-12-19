@@ -1,19 +1,24 @@
 class Solution {
 public:
-    int solve(int indx1, int indx2,string word1, string word2,vector<vector<int>>&dp)
+    int solve(int i, int j, string word1, string word2,vector<vector<int>>&dp)
     {
-        if(indx1<0)
+        if(i<0)
         {
-            return indx2+1;
-            
+            return j+1;
         }
-        if(indx2<0) return indx1+1;
-        if(dp[indx1][indx2]!= -1) return dp[indx1][indx2];
-        if(word1[indx1]==word2[indx2]) return dp[indx1][indx2]= 0+solve(indx1-1,indx2-1,word1,word2,dp);
+        if(j<0) return i+1;
+       if(dp[i][j]!= -1)return dp[i][j];
+        int replace=1e9,del=1e9,insert=1e9,noOp=1e9;
+        if(word1[i]==word2[j]) noOp=solve(i-1,j-1,word1,word2,dp);
         else
         {
-            return  dp[indx1][indx2]= 1+min(solve(indx1-1,indx2,word1,word2,dp),min(solve(indx1,indx2-1,word1,word2,dp),solve(indx1-1,indx2-1,word1,word2,dp)));
+            insert=1+solve(i,j-1,word1,word2,dp);
+            del=1+solve(i-1,j,word1,word2,dp);
+            replace=1+solve(i-1,j-1,word1,word2,dp);
+            
         }
+        return dp[i][j]=min(noOp,min(insert,min(del,replace)));
+        
     }
     int minDistance(string word1, string word2) {
         int n1=word1.length();
