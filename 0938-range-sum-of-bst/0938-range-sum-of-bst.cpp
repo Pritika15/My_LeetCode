@@ -11,15 +11,29 @@
  */
 class Solution {
 public:
-    void solve(TreeNode* root, int low, int high, int &sum)
-    {
-        if(root->val>=low && root->val<=high) sum+=root->val;
-        if(root->left) solve(root->left,low,high,sum);
-        if(root->right) solve(root->right,low,high,sum);
+    void solve(TreeNode* root, int low, int high, int& sum) {
+    if (!root) {
+        return;  // Base case: reached a null node
     }
+
+    if (root->val < low) {
+        solve(root->right, low, high, sum);  // Skip left subtree
+    } else if (root->val > high) {
+        solve(root->left, low, high, sum);   // Skip right subtree
+    } else {
+        // Include the current node in the sum
+        sum += root->val;
+        
+        // Explore both subtrees since the current node's value is within the range
+        solve(root->left, low, high, sum);
+        solve(root->right, low, high, sum);
+    }
+}
+
     int rangeSumBST(TreeNode* root, int low, int high) {
-        int sum=0;
-        solve(root,low,high,sum);
-        return sum;
-    }
+    int sum = 0;
+    solve(root, low, high, sum);
+    return sum;
+}
+
 };
