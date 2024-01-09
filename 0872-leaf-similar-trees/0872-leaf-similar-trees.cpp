@@ -24,18 +24,9 @@ public:
         if(root->right) Inorder(root->right,v);
     }
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-        
-        vector<int>v1;
+        vector<int>v1,v2;
         Inorder(root1,v1);
-        vector<int>v2;
         Inorder(root2,v2);
-        int n1=v1.size();
-        int n2=v2.size();
-        if(n1!=n2) return false;
-        for(int i=0;i<n1;i++)
-        {
-            if(v1[i]!=v2[i]) return false;
-        }
-        return true;
+        return v1==v2;
     }
 };
