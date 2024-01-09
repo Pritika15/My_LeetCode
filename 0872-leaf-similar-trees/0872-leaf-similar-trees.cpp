@@ -24,7 +24,7 @@ public:
         if(root->right) Inorder(root->right,v);
     }
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-        if(!root1 || !root2) return false;
+        
         vector<int>v1;
         Inorder(root1,v1);
         vector<int>v2;
