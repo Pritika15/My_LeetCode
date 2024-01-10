@@ -11,75 +11,78 @@
  */
 class Solution {
 public:
-    void MakeParent(TreeNode* root,unordered_map<TreeNode*,TreeNode*>&parent)
+    void Mapping(TreeNode* root, unordered_map<TreeNode*,TreeNode*>&childToParent)
     {
+//         BFS
         queue<TreeNode*>q;
         q.push(root);
         while(!q.empty())
         {
-            TreeNode* node=q.front();
+            TreeNode* t=q.front();
             q.pop();
-            if(node->left)
+            if(t->left) 
             {
-                parent[node->left]=node;
-                q.push(node->left);
+                childToParent[t->left]=t;
+                q.push(t->left);
             }
-            if(node->right)
+             if(t->right) 
             {
-                parent[node->right]=node;
-                q.push(node->right);
+                childToParent[t->right]=t;
+                q.push(t->right);
             }
         }
     }
     TreeNode* Find(TreeNode* root, int start)
-{
-    if (root == nullptr) return nullptr; // Base case: node not found
-    if (root->val == start) return root; // Base case: node found
+    {
+//         DFS Preorder
+        if(!root) return NULL;
+        if(root->val==start) return root;
+       
+        TreeNode* l=Find(root->left,start);
+        if(l) return l;
 
-    TreeNode* leftResult = Find(root->left, start);   // Search in the left subtree
-    if (leftResult) return leftResult; // If found in the left subtree, return it
 
-    TreeNode* rightResult = Find(root->right, start); // Search in the right subtree
-    return rightResult; // Return whatever is found in the right subtree (could be nullptr)
-}
-
-    int amountOfTime(TreeNode* root, int start) {
-        unordered_map<TreeNode*,TreeNode*>parent;
-        MakeParent(root,parent);
-        unordered_map<TreeNode*,bool>vis;
-        queue<TreeNode*>q;
+        TreeNode* r=Find(root->right,start);
+        return r;
         
-        TreeNode* target=Find(root,start);
-        // cout<<target->val<<endl;
-        q.push(target);
-        vis[target]=true;
-        int level=0;
+    }
+    int amountOfTime(TreeNode* root, int start) {
+        unordered_map<TreeNode*,TreeNode*>childToParent;
+        Mapping(root,childToParent);
+        unordered_map<TreeNode*,bool>vis;
+        TreeNode* st=Find(root,start);
+        
+        queue<pair<TreeNode*,int>>q;
+        q.push({st,0});
+        vis[st]=1;
+        int totalTime=0;
         while(!q.empty())
         {
-            int size=q.size();
-            level++;
-            for(int i=0;i<size;i++)
+            TreeNode* temp=q.front().first;
+            int time=q.front().second;
+            q.pop();
+            
+//             left-child
+            if(temp->left && !vis[temp->left])
             {
-                TreeNode* temp=q.front();
-                q.pop();
-                if(temp->left && !vis[temp->left])
-                {
-                    q.push(temp->left);
-                    vis[temp->left]=true;
-                }
-                if(temp->right && !vis[temp->right])
-                {
-                    q.push(temp->right);
-                    vis[temp->right]=true;
-                }
-                if(parent[temp] && !vis[parent[temp]])
-                {
-                    q.push(parent[temp]);
-                    vis[parent[temp]]=true;
-                }
+                q.push({temp->left,time+1});
+                vis[temp->left]=1;
             }
+            
+            //             right-child
+            if(temp->right && !vis[temp->right])
+            {
+                q.push({temp->right,time+1});
+                 vis[temp->right]=1;
+            }
+//             parent
+            if(childToParent[temp] && !vis[childToParent[temp]])
+            {
+                q.push({childToParent[temp],time+1});
+                vis[childToParent[temp]]=1;
+            }
+            totalTime=time;
         }
-        return level-1;
-        
+        return totalTime;
     }
 };
