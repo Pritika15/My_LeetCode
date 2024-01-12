@@ -8,9 +8,14 @@ public:
         vowels.insert('i');
         vowels.insert('o');
         vowels.insert('u');
+        vowels.insert('A');
+        vowels.insert('E');
+        vowels.insert('I');
+        vowels.insert('O');
+        vowels.insert('U');
         
         int cnt1=0,cnt2=0;
-        transform(s.begin(),s.end(),s.begin(),::tolower);
+        // transform(s.begin(),s.end(),s.begin(),::tolower);
         for(int i=0;i<n/2;i++)
         {
             if(vowels.find(s[i])!=vowels.end())
