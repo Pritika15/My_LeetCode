@@ -1,8 +1,8 @@
 class RandomizedSet {
 public:
-    set<int>s;
+    unordered_set<int>s;
     RandomizedSet() {
-        // set<int>s;
+        
     }
     
     bool insert(int val) {
@@ -15,22 +15,16 @@ public:
     }
     
     bool remove(int val) {
-        
         if(s.find(val)!=s.end())
         {
             s.erase(val);
             return true;
         }
         return false;
-        
     }
     
     int getRandom() {
-       if(!s.empty())                                           
-        {
-            return *next(s.begin(),rand()%s.size());              
-        }
-        return 0;
+        return *next(s.begin(),rand()%s.size());
     }
 };
 
