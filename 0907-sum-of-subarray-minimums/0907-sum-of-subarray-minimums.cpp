@@ -4,12 +4,17 @@ public:
     int sumSubarrayMins(vector<int>& arr) {
         int n=arr.size();
         stack<int>s1,s2;
-        vector<int>next_smaller(n),prev_smaller(n);
+        vector<int> next_smaller(n), prev_smaller(n);
+        
         for(int i=0;i<n;i++)
         {
             next_smaller[i]=n-i-1;
+//             i=0; n=4 ; 4-0-1=3
             prev_smaller[i]=i;
+//             max possible range of the next smaller and teh previoius smaller
+            
         }
+        
         
         for(int i=0;i<n;i++)
         {
@@ -21,7 +26,7 @@ public:
             s1.push(i);
         }
         
-        for(int i=n-1;i>=0;i--)
+         for(int i=n-1;i>=0;i--)
         {
             while(!s2.empty() && arr[s2.top()]>=arr[i])
             {
@@ -30,10 +35,14 @@ public:
             }
             s2.push(i);
         }
+        
         long long ans=0;
-       for(int i=0;i<n;i++){
-            ans=(ans+(arr[i]*(long long)(next_smaller[i]+1)*(prev_smaller[i]+1))%mod)%mod;
+        
+        for(int i=0;i<n;i++)
+        {
+            ans=(ans+(arr[i])*(long long)(next_smaller[i]+1)*(long long)(prev_smaller[i]+1)%mod)%mod;
         }
-        return int(ans);
+        return ans;
+        
     }
 };
