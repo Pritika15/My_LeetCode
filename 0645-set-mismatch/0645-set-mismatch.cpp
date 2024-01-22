@@ -1,25 +1,58 @@
 class Solution {
 public:
     vector<int> findErrorNums(vector<int>& nums) {
-        unordered_set<int>s;
-        int missing,duplicate;
-        for(int i=0;i<nums.size();i++)
+        int n=nums.size();
+        
+        int xorAll=0,xorArr=0;
+        
+        for(int i=1;i<=n;i++)
         {
-            if(s.find(nums[i])!=s.end())
-            {
-                duplicate=nums[i];
-            }
-            s.insert(nums[i]);
+            xorAll^=i;
         }
         
-        for(int i=1;i<=nums.size();i++)
+        for(int i=0;i<n;i++)
         {
-            if(s.find(i)==s.end())
+            xorArr^=nums[i];
+        }
+        
+        int xorRes=xorAll^xorArr;
+        
+        int rightmostSetBit=xorRes& -xorRes;
+        
+        int xorSet=0;
+        int xorNotSet=0;
+        
+        for(int i=1;i<=n;i++)
+        {
+            if(i&rightmostSetBit)
             {
-                missing=i;
+                xorSet^=i;
+            }
+            else
+            {
+                xorNotSet^=i;
             }
         }
         
-        return {duplicate,missing};
+        for(auto num:nums)
+        {
+            if(num & rightmostSetBit)
+            {
+                 xorSet^=num;
+            }
+            else
+            {
+                xorNotSet^=num;
+            }
+        }
+        
+        for(int num:nums)
+        {
+            if(num==xorSet)
+            {
+                return {xorSet,xorNotSet};
+            }
+        }
+        return {xorNotSet,xorSet};
     }
 };
