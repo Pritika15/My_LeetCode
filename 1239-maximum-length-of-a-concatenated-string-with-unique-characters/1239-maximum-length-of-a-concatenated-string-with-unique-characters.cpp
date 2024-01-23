@@ -1,24 +1,27 @@
 class Solution {
 public:
-    int len=0;
-      int maxLength(vector<string>& arr) {
-        checkLen("", arr, 0);
-        return len;
-    }
-    
-    void checkLen(string str, vector<string> &arr, int itr) {
-        if (!isUnique(str)) return;
-        if (str.size() > len) len = str.size();
-        for (int i = itr; i < arr.size(); i++)
-            checkLen(str+arr[i], arr, i+1);
-    }
-    
-    bool isUnique(string word) {
-        set<char> st;
-        for (auto ele : word) {
-            if (st.find(ele) != st.end()) return false;
-            st.insert(ele);
+    int maxLength(vector<string>& arr) {
+        vector<int> dp = {0};
+        int res = 0;
+        
+        for (const string& s : arr) {
+            int a = 0, dup = 0;
+            for (char c : s) {
+                dup |= a & (1 << (c - 'a'));
+                a |= 1 << (c - 'a');
+            }
+            
+            if (dup > 0)
+                continue;
+            
+            for (int i = dp.size() - 1; i >= 0; i--) {
+                if ((dp[i] & a) > 0)
+                    continue;
+                dp.push_back(dp[i] | a);
+                res = max(res, __builtin_popcount(dp[i] | a));
+            }
         }
-        return true;
+        
+        return res;
     }
 };
