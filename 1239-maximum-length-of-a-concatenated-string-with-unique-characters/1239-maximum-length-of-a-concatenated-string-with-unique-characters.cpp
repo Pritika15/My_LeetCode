@@ -1,27 +1,30 @@
 class Solution {
 public:
-    int maxLength(vector<string>& arr) {
-        vector<int> dp = {0};
-        int res = 0;
-        
-        for (const string& s : arr) {
-            int a = 0, dup = 0;
-            for (char c : s) {
-                dup |= a & (1 << (c - 'a'));
-                a |= 1 << (c - 'a');
-            }
-            
-            if (dup > 0)
-                continue;
-            
-            for (int i = dp.size() - 1; i >= 0; i--) {
-                if ((dp[i] & a) > 0)
-                    continue;
-                dp.push_back(dp[i] | a);
-                res = max(res, __builtin_popcount(dp[i] | a));
-            }
+    int len=0;
+    bool isUnique(string str)
+    {
+        set<char>s;
+        for(auto it:str)
+        {
+            if(s.find(it)!=s.end()) return false;
+            s.insert(it);
+
+        }
+        return true;
+    }
+    void solve(string str,vector<string>& arr,int indx)
+    {
+        if(!isUnique(str)) return;
+        if(str.length()>len) len=str.length();
+        for(int i=indx;i<arr.size();i++)
+        {
+            solve(str+arr[i],arr,i+1);
         }
         
-        return res;
+    }
+    int maxLength(vector<string>& arr) {
+        
+        solve("",arr,0);
+        return len;
     }
 };
