@@ -1,11 +1,9 @@
-#include<bits/stdc++.h>
 class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
         stack<int>s;
-       vector <string> t=tokens;
-        for(int i=0;i<t.size();i++){
-            if(t[i]=="+" or t[i]=="-" or t[i]=="*" or t[i]=="/"){
+         for(int i=0;i<tokens.size();i++){
+            if(tokens[i]=="+" or tokens[i]=="-" or tokens[i]=="*" or tokens[i]=="/"){
                 int op2=s.top();
                 s.pop();
                 int op1=s.top();
@@ -23,14 +21,14 @@ public:
                 //     case '/':
                 //         s.push(op1/op2);
                 //         break;
-                if(t[i][0]=='+') s.push(op1+op2);
-                else if(t[i][0]=='-') s.push(op1-op2);
-                else if(t[i][0]=='*') s.push(op1*op2);
+                if(tokens[i][0]=='+') s.push(op1+op2);
+                else if(tokens[i][0]=='-') s.push(op1-op2);
+                else if(tokens[i][0]=='*') s.push(op1*op2);
                 else s.push(op1/op2);
                 // }
             }
             else{
-                s.push(stoi(t[i]));
+                s.push(stoi(tokens[i]));
             }
         }
         return s.top();
