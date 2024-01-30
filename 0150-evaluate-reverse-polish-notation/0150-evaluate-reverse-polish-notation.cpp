@@ -10,20 +10,24 @@ public:
                 s.pop();
                 int op1=s.top();
                 s.pop();
-                switch(t[i][0]){
-                    case '+':
-                        s.push(op1+op2);
-                        break;
-                    case '-':
-                        s.push(op1-op2);
-                        break;
-                    case '*':
-                        s.push(op1*op2);
-                        break;
-                    case '/':
-                        s.push(op1/op2);
-                        break;
-                }
+                // switch(t[i][0]){
+                //     case '+':
+                //         s.push(op1+op2);
+                //         break;
+                //     case '-':
+                //         s.push(op1-op2);
+                //         break;
+                //     case '*':
+                //         s.push(op1*op2);
+                //         break;
+                //     case '/':
+                //         s.push(op1/op2);
+                //         break;
+                if(t[i][0]=='+') s.push(op1+op2);
+                else if(t[i][0]=='-') s.push(op1-op2);
+                else if(t[i][0]=='*') s.push(op1*op2);
+                else s.push(op1/op2);
+                // }
             }
             else{
                 s.push(stoi(t[i]));
