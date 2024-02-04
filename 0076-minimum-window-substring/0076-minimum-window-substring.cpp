@@ -1,44 +1,39 @@
 class Solution {
 public:
-   string minWindow(string s, string t) {
-
-    // Store the counts of characters in 't'
-    unordered_map<char, int> letters;
-    for(auto c : t) letters[c]++; 
-
-    int count = 0; // Number of valid letters in the current window
-    int low = 0; // Stores the position of the first character in window
-    // Stores location and length of best substring
-    int min_length = INT_MAX, min_start = 0;
-    
-    // Iterate over 's'
-    for(int high = 0; high<s.length(); high++) {
-        // If this character is required, then update count (Add it to the window)
-        if(letters[s[high]] > 0) count++;
-        // Reduce the count for this character (since we have added this to the window)
-        letters[s[high]]--;
-        // If we have all the valid characters, update substring
-        if(count == t.length()) {
-            // What exactly are we doing in the loop below?
-            //  This piece of code basically makes sure that letters[s[low]] is not negative
-            //  Because if it is negative, than that means we have more s[low]s than required.
-            //  So we have to remove such characters
-            while(low < high && letters[s[low]] < 0){ 
-                letters[s[low]]++; // Remove character from window, update count
-                low++; // Update substring window start
-            }
-            // Update substring
-            if(min_length > (high - low + 1)){
-                min_start = low; // Set start
-                min_length = high - low + 1; // Set length
+    string minWindow(string s, string t) {
+        unordered_map<char,int>m;
+        for(auto it:t) m[it]++;
+//         current window size
+        int cnt=0,low=0,min_len=1e9,min_start=0;
+        
+//         iterate over the str s
+        
+        for(int h=0;h<s.length();h++)
+        {
+//             if the current char i'm standing on is a part of str t
+            if(m[s[h]]>0) cnt++;
+//             reduce the cnt for this char : included it to the window
+            m[s[h]]--;
+//             if all the valid chars have been touched(is the curr windpow having all the chars of str t)
+            if(cnt==t.size())
+            {
+                while(low<h && m[s[low]] <0)
+                {
+                    m[s[low]]++;
+                    low++;
+                }
+                
+//                 update the substring 
+                if(min_len> (h-low+1))
+                {
+                    min_start=low;
+                    min_len=h-low+1;
+                }
             }
         }
+        
+        if(min_len==1e9) return "";
+        
+        return s.substr(min_start,min_len);
     }
-
-    // No substring satisfies 't'
-    if(min_length == INT_MAX) return "";
-
-    // Return the best substring
-    return s.substr(min_start, min_length);
-}
 };
