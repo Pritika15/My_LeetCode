@@ -1,39 +1,35 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
+//         step1
         unordered_map<char,int>m;
-        for(auto it:t) m[it]++;
-//         current window size
-        int cnt=0,low=0,min_len=1e9,min_start=0;
+        for(auto ch:t) m[ch]++;
+//         variables creatation : ranges for the window and lengths corresponding to the substrs possible
+        int cnt=0,mini_len=1e9,mini_start=0,low=0;
         
-//         iterate over the str s
-        
+//         work with the str s
         for(int h=0;h<s.length();h++)
         {
-//             if the current char i'm standing on is a part of str t
             if(m[s[h]]>0) cnt++;
-//             reduce the cnt for this char : included it to the window
             m[s[h]]--;
-//             if all the valid chars have been touched(is the curr windpow having all the chars of str t)
+            
             if(cnt==t.size())
             {
-                while(low<h && m[s[low]] <0)
+                while(low<=h && m[s[low]]<0)
                 {
                     m[s[low]]++;
                     low++;
                 }
                 
-//                 update the substring 
-                if(min_len> (h-low+1))
+                if(mini_len>(h-low+1))
                 {
-                    min_start=low;
-                    min_len=h-low+1;
+                    mini_len=(h-low+1);
+                    mini_start=low;
                 }
             }
         }
+        if(mini_len==1e9) return "";
+        return s.substr(mini_start,mini_len);
         
-        if(min_len==1e9) return "";
-        
-        return s.substr(min_start,min_len);
     }
 };
