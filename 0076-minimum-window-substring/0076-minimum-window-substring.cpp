@@ -1,20 +1,44 @@
 class Solution {
 public:
-    string minWindow(string s, string t) {
-        unordered_map<char, int> letters; //unordered map for storing the characters in t that we need to check for in s
-        for(auto c : t) letters[c]++; 
-        int count = 0; //counts number of t's letters in current window
-        int low = 0, min_length = INT_MAX, min_start = 0;     
-        for(int high = 0; high<s.length(); high++) {
-            if(letters[s[high]] > 0) count++; //means that this letter is in t   
-            letters[s[high]]--; //reduce the count for the letter on which we are currently 
-            if(count == t.length()) { //if current windows contains all of the letters in t
-                while(low < high && letters[s[low]] < 0) letters[s[low]]++, low++; //move low ahead if its not of any significance
-                if(min_length > high-low) min_length = high-(min_start=low)+1; //update the min length
-                letters[s[low++]]++; //move low ahaead and also increment the value
-                count--; //count-- as we are moving low ahead & low pointed to a char in t before
+   string minWindow(string s, string t) {
+
+    // Store the counts of characters in 't'
+    unordered_map<char, int> letters;
+    for(auto c : t) letters[c]++; 
+
+    int count = 0; // Number of valid letters in the current window
+    int low = 0; // Stores the position of the first character in window
+    // Stores location and length of best substring
+    int min_length = INT_MAX, min_start = 0;
+    
+    // Iterate over 's'
+    for(int high = 0; high<s.length(); high++) {
+        // If this character is required, then update count (Add it to the window)
+        if(letters[s[high]] > 0) count++;
+        // Reduce the count for this character (since we have added this to the window)
+        letters[s[high]]--;
+        // If we have all the valid characters, update substring
+        if(count == t.length()) {
+            // What exactly are we doing in the loop below?
+            //  This piece of code basically makes sure that letters[s[low]] is not negative
+            //  Because if it is negative, than that means we have more s[low]s than required.
+            //  So we have to remove such characters
+            while(low < high && letters[s[low]] < 0){ 
+                letters[s[low]]++; // Remove character from window, update count
+                low++; // Update substring window start
+            }
+            // Update substring
+            if(min_length > (high - low + 1)){
+                min_start = low; // Set start
+                min_length = high - low + 1; // Set length
             }
         }
-        return min_length == INT_MAX ? "" : s.substr(min_start, min_length); //check for edge case & return the result
     }
+
+    // No substring satisfies 't'
+    if(min_length == INT_MAX) return "";
+
+    // Return the best substring
+    return s.substr(min_start, min_length);
+}
 };
