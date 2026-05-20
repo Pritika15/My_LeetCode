@@ -5,7 +5,7 @@ public:
       vector<int> ans(n), vis(n+1,0);
       int count =0;
 
-      for(int i =0;i<n;i++)
+      for(int i =0;i<n-1;i++)
       {
         if(++vis[A[i]]==2) ++count;
 
@@ -13,7 +13,8 @@ public:
 
         ans[i]=count;
 
-      }  
+      } 
+      ans[n-1]=n; 
       return ans;
     }
 };
