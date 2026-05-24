@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Pritika15/My_LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [1306-jump-game-iii](https://github.com/Pritika15/My_LeetCode/tree/master/1306-jump-game-iii) |
+| [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Pritika15/My_LeetCode/tree/master/2657-find-the-prefix-common-array-of-two-arrays) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
 ## Hash Table
@@ -18,6 +19,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Sorting
 |  |
 | ------- |
+| [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
 ## Binary Search
 |  |
@@ -35,4 +37,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Pritika15/My_LeetCode/tree/master/2657-find-the-prefix-common-array-of-two-arrays) |
+## Dynamic Programming
+|  |
+| ------- |
+| [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 <!---LeetCode Topics End-->
