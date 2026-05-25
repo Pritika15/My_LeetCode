@@ -39,6 +39,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Depth-First Search
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0094-binary-tree-inorder-traversal) |
 | [1306-jump-game-iii](https://github.com/Pritika15/My_LeetCode/tree/master/1306-jump-game-iii) |
 ## Breadth-First Search
 |  |
@@ -79,4 +80,16 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1871-jump-game-vii](https://github.com/Pritika15/My_LeetCode/tree/master/1871-jump-game-vii) |
+## Stack
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0094-binary-tree-inorder-traversal) |
+## Tree
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0094-binary-tree-inorder-traversal) |
+## Binary Tree
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0094-binary-tree-inorder-traversal) |
 <!---LeetCode Topics End-->
