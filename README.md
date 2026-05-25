@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0031-next-permutation](https://github.com/Pritika15/My_LeetCode/tree/master/0031-next-permutation) |
 | [0073-set-matrix-zeroes](https://github.com/Pritika15/My_LeetCode/tree/master/0073-set-matrix-zeroes) |
+| [0075-sort-colors](https://github.com/Pritika15/My_LeetCode/tree/master/0075-sort-colors) |
 | [0152-maximum-product-subarray](https://github.com/Pritika15/My_LeetCode/tree/master/0152-maximum-product-subarray) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Pritika15/My_LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
@@ -24,6 +25,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Sorting
 |  |
 | ------- |
+| [0075-sort-colors](https://github.com/Pritika15/My_LeetCode/tree/master/0075-sort-colors) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
 ## Binary Search
@@ -58,6 +60,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0031-next-permutation](https://github.com/Pritika15/My_LeetCode/tree/master/0031-next-permutation) |
+| [0075-sort-colors](https://github.com/Pritika15/My_LeetCode/tree/master/0075-sort-colors) |
 ## String
 |  |
 | ------- |
