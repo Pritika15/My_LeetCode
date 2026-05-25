@@ -12,6 +12,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Pritika15/My_LeetCode/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/Pritika15/My_LeetCode/tree/master/0152-maximum-product-subarray) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Pritika15/My_LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
+| [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [1306-jump-game-iii](https://github.com/Pritika15/My_LeetCode/tree/master/1306-jump-game-iii) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
@@ -33,6 +34,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Pritika15/My_LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
+| [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
 ## Depth-First Search
 |  |
@@ -45,6 +47,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Bit Manipulation
 |  |
 | ------- |
+| [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Pritika15/My_LeetCode/tree/master/2657-find-the-prefix-common-array-of-two-arrays) |
 ## Dynamic Programming
 |  |
@@ -63,6 +66,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0031-next-permutation](https://github.com/Pritika15/My_LeetCode/tree/master/0031-next-permutation) |
 | [0075-sort-colors](https://github.com/Pritika15/My_LeetCode/tree/master/0075-sort-colors) |
+| [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 ## String
 |  |
 | ------- |
