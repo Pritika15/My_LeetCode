@@ -2,7 +2,7 @@ class Solution {
 public:
     int numberOfSpecialChars(string word) {
         int count = 0;
-        vector<pair<int,int>>pos(52,{INT_MAX,INT_MIN});
+        vector<pair<int,int>>pos(26,{INT_MAX,INT_MIN});
         for(int i =0; i<word.length();i++)
         {
             if(word[i]>='a' && word[i]<='z')
