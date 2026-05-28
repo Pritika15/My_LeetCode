@@ -18,6 +18,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Pritika15/My_LeetCode/tree/master/2657-find-the-prefix-common-array-of-two-arrays) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
+| [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
 ## Hash Table
 |  |
 | ------- |
@@ -75,6 +76,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1871-jump-game-vii](https://github.com/Pritika15/My_LeetCode/tree/master/1871-jump-game-vii) |
+| [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
 | [3121-count-the-number-of-special-characters-ii](https://github.com/Pritika15/My_LeetCode/tree/master/3121-count-the-number-of-special-characters-ii) |
 ## Sliding Window
 |  |
@@ -102,4 +104,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0094-binary-tree-inorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0094-binary-tree-inorder-traversal) |
 | [0144-binary-tree-preorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [0145-binary-tree-postorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0145-binary-tree-postorder-traversal) |
+## Trie
+|  |
+| ------- |
+| [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
 <!---LeetCode Topics End-->
