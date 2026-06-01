@@ -16,6 +16,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [1306-jump-game-iii](https://github.com/Pritika15/My_LeetCode/tree/master/1306-jump-game-iii) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
+| [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/Pritika15/My_LeetCode/tree/master/2144-minimum-cost-of-buying-candies-with-discount) |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Pritika15/My_LeetCode/tree/master/2657-find-the-prefix-common-array-of-two-arrays) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
 | [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
@@ -31,6 +32,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0075-sort-colors](https://github.com/Pritika15/My_LeetCode/tree/master/0075-sort-colors) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
+| [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/Pritika15/My_LeetCode/tree/master/2144-minimum-cost-of-buying-candies-with-discount) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
 ## Binary Search
 |  |
@@ -108,4 +110,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
+## Greedy
+|  |
+| ------- |
+| [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/Pritika15/My_LeetCode/tree/master/2144-minimum-cost-of-buying-candies-with-discount) |
 <!---LeetCode Topics End-->
