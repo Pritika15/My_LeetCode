@@ -81,6 +81,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 |  |
 | ------- |
+| [1021-remove-outermost-parentheses](https://github.com/Pritika15/My_LeetCode/tree/master/1021-remove-outermost-parentheses) |
 | [1871-jump-game-vii](https://github.com/Pritika15/My_LeetCode/tree/master/1871-jump-game-vii) |
 | [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
 | [3121-count-the-number-of-special-characters-ii](https://github.com/Pritika15/My_LeetCode/tree/master/3121-count-the-number-of-special-characters-ii) |
@@ -98,6 +99,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0094-binary-tree-inorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0094-binary-tree-inorder-traversal) |
 | [0144-binary-tree-preorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [0145-binary-tree-postorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0145-binary-tree-postorder-traversal) |
+| [1021-remove-outermost-parentheses](https://github.com/Pritika15/My_LeetCode/tree/master/1021-remove-outermost-parentheses) |
 ## Tree
 |  |
 | ------- |
