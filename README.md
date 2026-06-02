@@ -76,11 +76,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0031-next-permutation](https://github.com/Pritika15/My_LeetCode/tree/master/0031-next-permutation) |
 | [0075-sort-colors](https://github.com/Pritika15/My_LeetCode/tree/master/0075-sort-colors) |
+| [0151-reverse-words-in-a-string](https://github.com/Pritika15/My_LeetCode/tree/master/0151-reverse-words-in-a-string) |
 | [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/Pritika15/My_LeetCode/tree/master/3633-earliest-finish-time-for-land-and-water-rides-i) |
 ## String
 |  |
 | ------- |
+| [0151-reverse-words-in-a-string](https://github.com/Pritika15/My_LeetCode/tree/master/0151-reverse-words-in-a-string) |
 | [1021-remove-outermost-parentheses](https://github.com/Pritika15/My_LeetCode/tree/master/1021-remove-outermost-parentheses) |
 | [1871-jump-game-vii](https://github.com/Pritika15/My_LeetCode/tree/master/1871-jump-game-vii) |
 | [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
