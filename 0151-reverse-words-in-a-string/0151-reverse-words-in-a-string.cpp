@@ -1,25 +1,30 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        int n=s.length();
-        string ans;
-        vector<string>v;
-        for(int i=0;i<n;i++)
+        stack<string>st;
+        int n = s.length();
+        string temp = "";
+        for(int i =0;i<n;i++)
         {
-            string temp="";
-            while(!isspace(s[i]) && i<n)
+            if(s[i]!=' ' || (i==n-1 && s[i]!=' '))
             {
                 temp.push_back(s[i]);
-                i++;
             }
-            if(!temp.empty()) v.push_back(temp);
+            else
+            {
+                if(!temp.empty())st.push(temp);
+                temp = "";
+            }
         }
-        
-        for(int i=v.size()-1;i>=0;i--)
+        if(!temp.empty())st.push(temp);
+        temp = "";
+        while(!st.empty())
         {
-            ans.append(v[i]);
-            if(i>0) ans.append(" ");
+            temp+=st.top();
+            st.pop();
+            temp.push_back(' ');
         }
-        return ans;
+        temp.pop_back();
+        return temp;
     }
 };
