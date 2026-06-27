@@ -20,6 +20,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/Pritika15/My_LeetCode/tree/master/2144-minimum-cost-of-buying-candies-with-discount) |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Pritika15/My_LeetCode/tree/master/2657-find-the-prefix-common-array-of-two-arrays) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
+| [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/Pritika15/My_LeetCode/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
 | [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/Pritika15/My_LeetCode/tree/master/3633-earliest-finish-time-for-land-and-water-rides-i) |
 ## Hash Table
@@ -29,6 +30,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0205-isomorphic-strings](https://github.com/Pritika15/My_LeetCode/tree/master/0205-isomorphic-strings) |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Pritika15/My_LeetCode/tree/master/2657-find-the-prefix-common-array-of-two-arrays) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
+| [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/Pritika15/My_LeetCode/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
 | [3121-count-the-number-of-special-characters-ii](https://github.com/Pritika15/My_LeetCode/tree/master/3121-count-the-number-of-special-characters-ii) |
 ## Sorting
 |  |
@@ -134,4 +136,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1903-largest-odd-number-in-string](https://github.com/Pritika15/My_LeetCode/tree/master/1903-largest-odd-number-in-string) |
+## Enumeration
+|  |
+| ------- |
+| [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/Pritika15/My_LeetCode/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
 <!---LeetCode Topics End-->
