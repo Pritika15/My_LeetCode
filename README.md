@@ -15,6 +15,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Pritika15/My_LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
+| [1260-shift-2d-grid](https://github.com/Pritika15/My_LeetCode/tree/master/1260-shift-2d-grid) |
 | [1306-jump-game-iii](https://github.com/Pritika15/My_LeetCode/tree/master/1306-jump-game-iii) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/Pritika15/My_LeetCode/tree/master/2144-minimum-cost-of-buying-candies-with-discount) |
@@ -75,6 +76,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0073-set-matrix-zeroes](https://github.com/Pritika15/My_LeetCode/tree/master/0073-set-matrix-zeroes) |
+| [1260-shift-2d-grid](https://github.com/Pritika15/My_LeetCode/tree/master/1260-shift-2d-grid) |
 ## Two Pointers
 |  |
 | ------- |
@@ -147,4 +149,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/Pritika15/My_LeetCode/tree/master/1081-smallest-subsequence-of-distinct-characters) |
+## Simulation
+|  |
+| ------- |
+| [1260-shift-2d-grid](https://github.com/Pritika15/My_LeetCode/tree/master/1260-shift-2d-grid) |
 <!---LeetCode Topics End-->
