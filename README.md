@@ -102,6 +102,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0125-valid-palindrome](https://github.com/Pritika15/My_LeetCode/tree/master/0125-valid-palindrome) |
 | [0151-reverse-words-in-a-string](https://github.com/Pritika15/My_LeetCode/tree/master/0151-reverse-words-in-a-string) |
 | [0205-isomorphic-strings](https://github.com/Pritika15/My_LeetCode/tree/master/0205-isomorphic-strings) |
+| [0394-decode-string](https://github.com/Pritika15/My_LeetCode/tree/master/0394-decode-string) |
 | [0424-longest-repeating-character-replacement](https://github.com/Pritika15/My_LeetCode/tree/master/0424-longest-repeating-character-replacement) |
 | [1021-remove-outermost-parentheses](https://github.com/Pritika15/My_LeetCode/tree/master/1021-remove-outermost-parentheses) |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/Pritika15/My_LeetCode/tree/master/1081-smallest-subsequence-of-distinct-characters) |
@@ -125,6 +126,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0094-binary-tree-inorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0094-binary-tree-inorder-traversal) |
 | [0144-binary-tree-preorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [0145-binary-tree-postorder-traversal](https://github.com/Pritika15/My_LeetCode/tree/master/0145-binary-tree-postorder-traversal) |
+| [0394-decode-string](https://github.com/Pritika15/My_LeetCode/tree/master/0394-decode-string) |
 | [1021-remove-outermost-parentheses](https://github.com/Pritika15/My_LeetCode/tree/master/1021-remove-outermost-parentheses) |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/Pritika15/My_LeetCode/tree/master/1081-smallest-subsequence-of-distinct-characters) |
 ## Tree
@@ -171,4 +173,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/Pritika15/My_LeetCode/tree/master/0020-valid-parentheses) |
+## Recursion
+|  |
+| ------- |
+| [0394-decode-string](https://github.com/Pritika15/My_LeetCode/tree/master/0394-decode-string) |
 <!---LeetCode Topics End-->
