@@ -18,6 +18,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Pritika15/My_LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
+| [0410-split-array-largest-sum](https://github.com/Pritika15/My_LeetCode/tree/master/0410-split-array-largest-sum) |
 | [1260-shift-2d-grid](https://github.com/Pritika15/My_LeetCode/tree/master/1260-shift-2d-grid) |
 | [1306-jump-game-iii](https://github.com/Pritika15/My_LeetCode/tree/master/1306-jump-game-iii) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
@@ -53,6 +54,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Pritika15/My_LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
+| [0410-split-array-largest-sum](https://github.com/Pritika15/My_LeetCode/tree/master/0410-split-array-largest-sum) |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/Pritika15/My_LeetCode/tree/master/3633-earliest-finish-time-for-land-and-water-rides-i) |
 ## Depth-First Search
 |  |
@@ -76,6 +78,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Pritika15/My_LeetCode/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/Pritika15/My_LeetCode/tree/master/0152-maximum-product-subarray) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
+| [0410-split-array-largest-sum](https://github.com/Pritika15/My_LeetCode/tree/master/0410-split-array-largest-sum) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 | [1871-jump-game-vii](https://github.com/Pritika15/My_LeetCode/tree/master/1871-jump-game-vii) |
 ## Matrix
@@ -120,6 +123,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Prefix Sum
 |  |
 | ------- |
+| [0410-split-array-largest-sum](https://github.com/Pritika15/My_LeetCode/tree/master/0410-split-array-largest-sum) |
 | [1871-jump-game-vii](https://github.com/Pritika15/My_LeetCode/tree/master/1871-jump-game-vii) |
 ## Stack
 |  |
@@ -152,6 +156,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Greedy
 |  |
 | ------- |
+| [0410-split-array-largest-sum](https://github.com/Pritika15/My_LeetCode/tree/master/0410-split-array-largest-sum) |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/Pritika15/My_LeetCode/tree/master/1081-smallest-subsequence-of-distinct-characters) |
 | [1903-largest-odd-number-in-string](https://github.com/Pritika15/My_LeetCode/tree/master/1903-largest-odd-number-in-string) |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/Pritika15/My_LeetCode/tree/master/2144-minimum-cost-of-buying-candies-with-discount) |
