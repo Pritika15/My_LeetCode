@@ -19,6 +19,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0287-find-the-duplicate-number](https://github.com/Pritika15/My_LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/Pritika15/My_LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0410-split-array-largest-sum](https://github.com/Pritika15/My_LeetCode/tree/master/0410-split-array-largest-sum) |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
 | [1260-shift-2d-grid](https://github.com/Pritika15/My_LeetCode/tree/master/1260-shift-2d-grid) |
 | [1306-jump-game-iii](https://github.com/Pritika15/My_LeetCode/tree/master/1306-jump-game-iii) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
@@ -44,6 +45,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0015-3sum](https://github.com/Pritika15/My_LeetCode/tree/master/0015-3sum) |
 | [0016-3sum-closest](https://github.com/Pritika15/My_LeetCode/tree/master/0016-3sum-closest) |
 | [0075-sort-colors](https://github.com/Pritika15/My_LeetCode/tree/master/0075-sort-colors) |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
 | [1340-jump-game-v](https://github.com/Pritika15/My_LeetCode/tree/master/1340-jump-game-v) |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/Pritika15/My_LeetCode/tree/master/2144-minimum-cost-of-buying-candies-with-discount) |
 | [2784-check-if-array-is-good](https://github.com/Pritika15/My_LeetCode/tree/master/2784-check-if-array-is-good) |
@@ -164,6 +166,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Math
 |  |
 | ------- |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
 | [1903-largest-odd-number-in-string](https://github.com/Pritika15/My_LeetCode/tree/master/1903-largest-odd-number-in-string) |
 ## Enumeration
 |  |
@@ -193,4 +196,24 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0019-remove-nth-node-from-end-of-list](https://github.com/Pritika15/My_LeetCode/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0024-swap-nodes-in-pairs](https://github.com/Pritika15/My_LeetCode/tree/master/0024-swap-nodes-in-pairs) |
 | [0234-palindrome-linked-list](https://github.com/Pritika15/My_LeetCode/tree/master/0234-palindrome-linked-list) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
+## Geometry
+|  |
+| ------- |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
+## Quickselect
+|  |
+| ------- |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
+## K-D Tree
+|  |
+| ------- |
+| [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
 <!---LeetCode Topics End-->
