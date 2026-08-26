@@ -199,11 +199,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/Pritika15/My_LeetCode/tree/master/0019-remove-nth-node-from-end-of-list) |
+| [0023-merge-k-sorted-lists](https://github.com/Pritika15/My_LeetCode/tree/master/0023-merge-k-sorted-lists) |
 | [0024-swap-nodes-in-pairs](https://github.com/Pritika15/My_LeetCode/tree/master/0024-swap-nodes-in-pairs) |
 | [0234-palindrome-linked-list](https://github.com/Pritika15/My_LeetCode/tree/master/0234-palindrome-linked-list) |
 ## Divide and Conquer
 |  |
 | ------- |
+| [0023-merge-k-sorted-lists](https://github.com/Pritika15/My_LeetCode/tree/master/0023-merge-k-sorted-lists) |
 | [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
 ## Geometry
 |  |
@@ -212,6 +214,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Heap (Priority Queue)
 |  |
 | ------- |
+| [0023-merge-k-sorted-lists](https://github.com/Pritika15/My_LeetCode/tree/master/0023-merge-k-sorted-lists) |
 | [0658-find-k-closest-elements](https://github.com/Pritika15/My_LeetCode/tree/master/0658-find-k-closest-elements) |
 | [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
 ## Quickselect
@@ -222,4 +225,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
+## Merge Sort
+|  |
+| ------- |
+| [0023-merge-k-sorted-lists](https://github.com/Pritika15/My_LeetCode/tree/master/0023-merge-k-sorted-lists) |
+## Tournament Sort
+|  |
+| ------- |
+| [0023-merge-k-sorted-lists](https://github.com/Pritika15/My_LeetCode/tree/master/0023-merge-k-sorted-lists) |
 <!---LeetCode Topics End-->
