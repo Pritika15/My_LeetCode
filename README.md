@@ -30,6 +30,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/Pritika15/My_LeetCode/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
 | [3093-longest-common-suffix-queries](https://github.com/Pritika15/My_LeetCode/tree/master/3093-longest-common-suffix-queries) |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/Pritika15/My_LeetCode/tree/master/3633-earliest-finish-time-for-land-and-water-rides-i) |
+| [3875-construct-uniform-parity-array-i](https://github.com/Pritika15/My_LeetCode/tree/master/3875-construct-uniform-parity-array-i) |
 ## Hash Table
 |  |
 | ------- |
@@ -173,6 +174,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0973-k-closest-points-to-origin](https://github.com/Pritika15/My_LeetCode/tree/master/0973-k-closest-points-to-origin) |
 | [1903-largest-odd-number-in-string](https://github.com/Pritika15/My_LeetCode/tree/master/1903-largest-odd-number-in-string) |
+| [3875-construct-uniform-parity-array-i](https://github.com/Pritika15/My_LeetCode/tree/master/3875-construct-uniform-parity-array-i) |
 ## Enumeration
 |  |
 | ------- |
