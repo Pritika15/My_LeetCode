@@ -17,7 +17,7 @@ public:
 
         if (p == nullptr || q == nullptr) return false;
 
-        if(p && q && p->val != q->val) return false;
+        if( p->val != q->val) return false;
 
         bool l = check(p->left, q->left);
         bool r = check(p->right,q->right);
