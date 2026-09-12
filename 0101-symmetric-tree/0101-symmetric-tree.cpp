@@ -11,14 +11,16 @@
  */
 class Solution {
 public:
-    bool PreOrder(TreeNode* root1, TreeNode* root2)
+    bool Check(TreeNode* temp1, TreeNode* temp2)
     {
-        if(!root1 || !root2) return root1==root2;
-        if(root1->val!=root2->val) return false;
-        return  PreOrder(root1->left,root2->right) && PreOrder(root1->right,root2->left);
+        if(temp1==nullptr && temp2==nullptr) return true;
+        if(!temp1 || !temp2 || temp1->val!=temp2->val) return false;
+        bool a  = Check(temp1->left,temp2->right);
+        bool b = Check(temp1->right,temp2->left);
+        return a&&b;
     }
     bool isSymmetric(TreeNode* root) {
-      return !root || PreOrder(root->left,root->right);
-        
+        if(!root) return false;
+        return Check(root->left,root->right);
     }
 };
